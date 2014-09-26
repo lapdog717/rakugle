@@ -10,21 +10,21 @@
   <h2>市場</h2>
   <ul>
   <% @ichiba_items.first(10).each do |item| %>
-    <li><%= "#{item['itemName']}, #{item['itemPrice']} yen" %></li>
+    <li><%= link_to item['itemName'], item['affiliateUrl'], :target => '_blank' %></li>
   <% end %>
   </ul>
 
   <h2>Books</h2>
   <ul>
   <% @books_items.first(10).each do |item| %>
-    <li><%= "#{item['title']}, #{item['itemPrice']} yen" %></li>
+    <li><%= link_to item['title'], item['affiliateUrl'], :target => '_blank' %></li>
   <% end %>
   </ul>
 
   <h2>Kobo</h2>
   <ul>
   <% @kobo_items.first(10).each do |item| %>
-    <li><%= "#{item['Item']['title']}, #{item['Item']['itemPrice']} yen" %></li>
+    <li><%= link_to item['Item']['title'], item['Item']['itemUrl'], :target => '_blank' %></li>
   <% end %>
   </ul>
 
